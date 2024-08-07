@@ -1,6 +1,5 @@
 import { Link } from "@/src/navigation";
 
-
 const Table = ({ data }) => {
   return (
     <div className="overflow-x-auto">
