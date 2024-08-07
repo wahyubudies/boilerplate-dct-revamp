@@ -14,7 +14,7 @@ export default function RootLayout({ children, params: { locale } }) {
     <html lang={locale}>
       <body className={inter.className}>
         <Header />
-        {children}
+        <div className="container m-auto">{children}</div>
         <Footer />
       </body>
     </html>

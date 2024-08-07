@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Table = ({ data }) => {
   return (
     <div className="overflow-x-auto">
@@ -13,7 +15,9 @@ const Table = ({ data }) => {
         <tbody>
           {data.map((item) => (
             <tr key={item.id}>
-              <td className="py-2 px-4 border-b">{item.id}</td>
+              <td className="py-2 px-4 border-b">
+                <Link href={"/en/post/" + item.id}>{item.id}</Link>
+              </td>
               <td className="py-2 px-4 border-b">{item.first_name}</td>
               <td className="py-2 px-4 border-b">{item.email}</td>
               <td className="py-2 px-4 border-b">
