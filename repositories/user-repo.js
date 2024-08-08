@@ -1,14 +1,13 @@
-import DummyPost from "@/dummy/dummy-post";
+import DummyUser from "@/dummy/dummy-user";
 import Common from "@/utilities/common";
 import RequestHelper from "@/utilities/request-helper";
 
-// const BASE_API = process.env.REACT_APP_BASE_API_DEVELOPMENT;
 const BASE_API = Common.baseApi();
 
 const getListUser = async ({ page }) => {
   // const url = BASE_API + `/api/users?page=${page}`;
   // const res = await RequestHelper({ URL: url, METHOD: "GET" });
-  const res = DummyPost.post;
+  const res = DummyUser.user;
   return res;
 };
 

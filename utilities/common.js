@@ -1,24 +1,16 @@
 const ENV = process.env.REACT_APP_ENVIRONMENT;
 
 const baseApi = () => {
-  let BASE_API;
-
   switch (ENV) {
     case "PRODUCTION":
-      BASE_API = process.env.REACT_APP_BASE_API_PRODUCTION;
-      break;
+      return process.env.REACT_APP_BASE_API_PRODUCTION;
     case "STAGGING":
-      BASE_API = process.env.REACT_APP_BASE_API_STAGGING;
-      break;
+      return process.env.REACT_APP_BASE_API_STAGGING;
     case "DEVELOPMENT":
-      BASE_API = process.env.REACT_APP_BASE_API_DEVELOPMENT;
-      break;
+      return process.env.REACT_APP_BASE_API_DEVELOPMENT;
     default:
-      BASE_API = "";
-      break;
+      return "";
   }
-
-  return BASE_API;
 };
 
 const Common = {

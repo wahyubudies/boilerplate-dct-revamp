@@ -1,8 +1,4 @@
-const post = {
-  page: 2,
-  per_page: 6,
-  total: 12,
-  total_pages: 2,
+const user = {
   data: [
     {
       id: 7,
@@ -47,14 +43,10 @@ const post = {
       avatar: "https://reqres.in/img/faces/12-image.jpg",
     },
   ],
-  support: {
-    url: "https://reqres.in/#support-heading",
-    text: "To keep ReqRes free, contributions towards server costs are appreciated!",
-  },
 };
 
-const DummyPost = {
-  post,
+const DummyUser = {
+  user,
 };
 
-export default DummyPost;
+export default DummyUser;

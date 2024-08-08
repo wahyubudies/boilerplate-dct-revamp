@@ -1,22 +1,26 @@
-export default async function RequestHelper({ HEAD, URL, METHOD, DATA }) {
+export default async function requestHelper({ HEAD, URL, METHOD, DATA }) {
   try {
     const HEADERS = {
       ...HEAD,
+      "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
     };
 
-    const res = await fetch(URL, {
+    const options = {
       method: METHOD,
       headers: HEADERS,
-      body: JSON.stringify(DATA),
-    });
+      body: METHOD !== "GET" ? JSON.stringify(DATA) : undefined,
+    };
+
+    const res = await fetch(URL, options);
 
     if (!res.ok) {
-      throw new Error("Failed to fetch data");
+      throw new Error(`Failed to fetch data: ${res.statusText}`);
     }
 
-    return res.json();
+    return await res.json();
   } catch (err) {
-    console.log(err);
+    console.error("Request failed:", err);
+    throw err;
   }
 }
